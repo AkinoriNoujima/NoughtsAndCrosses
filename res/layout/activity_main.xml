@@ -14,7 +14,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
@@ -23,74 +23,74 @@
         android:text="-" />
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btn0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
-        android:layout_toLeftOf="@+id/btn2"
+        android:layout_toLeftOf="@+id/btn1"
         android:tag="0"
         android:text="-" />
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
-        android:layout_toRightOf="@+id/btn2"
+        android:layout_toRightOf="@+id/btn1"
         android:tag="2"
-        android:text="-" />
-
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn2"
-        android:layout_centerHorizontal="true"
-        android:tag="4"
         android:text="-" />
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn2"
-        android:layout_toLeftOf="@+id/btn5"
+        android:layout_below="@+id/btn1"
+        android:layout_centerHorizontal="true"
+        android:tag="4"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn1"
+        android:layout_toLeftOf="@+id/btn4"
         android:tag="3"
         android:text="-" />
 
     <Button
-        android:id="@+id/btn6"
+        android:id="@+id/btn5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn2"
-        android:layout_toRightOf="@+id/btn5"
+        android:layout_below="@+id/btn1"
+        android:layout_toRightOf="@+id/btn4"
         android:tag="5"
-        android:text="-" />
-
-    <Button
-        android:id="@+id/btn8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn5"
-        android:layout_centerHorizontal="true"
-        android:tag="7"
         android:text="-" />
 
     <Button
         android:id="@+id/btn7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn5"
-        android:layout_toLeftOf="@+id/btn8"
+        android:layout_below="@+id/btn4"
+        android:layout_centerHorizontal="true"
+        android:tag="7"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn4"
+        android:layout_toLeftOf="@+id/btn7"
         android:tag="6"
         android:text="-" />
 
     <Button
-        android:id="@+id/btn9"
+        android:id="@+id/btn8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn5"
-        android:layout_toRightOf="@+id/btn8"
+        android:layout_below="@+id/btn4"
+        android:layout_toRightOf="@+id/btn7"
         android:tag="8"
         android:text="-" />
 

@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	private TextView turnText;
 	private TextView resultText;
 	//9マスのボタンと再勝負ボタン
-	private Button[] selectBtns;
+	private Button[] gridBtns;
 	private Button retryBtn;
 
 	/*-----------------------------------------------------------------------*/
@@ -38,7 +38,8 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		resultText = (TextView) findViewById(R.id.resultText);
 
 		//ButtonView
-		selectBtns = new Button[] {
+		gridBtns = new Button[] {
+				(Button) findViewById(R.id.btn0),
 				(Button) findViewById(R.id.btn1),
 				(Button) findViewById(R.id.btn2),
 				(Button) findViewById(R.id.btn3),
@@ -47,13 +48,12 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 				(Button) findViewById(R.id.btn6),
 				(Button) findViewById(R.id.btn7),
 				(Button) findViewById(R.id.btn8),
-				(Button) findViewById(R.id.btn9),
 		};
 		retryBtn = (Button) findViewById(R.id.retryBtn);
 
 		//各ボタンにOnClickListenerをセット
-		for (int i = 0; i < selectBtns.length; i++) {
-			selectBtns[i].setOnClickListener(this);
+		for (int i = 0; i < gridBtns.length; i++) {
+			gridBtns[i].setOnClickListener(this);
 		}
 		retryBtn.setOnClickListener(MainActivity.this);
 
@@ -66,9 +66,20 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	/*-----------------------------------------------------------------------*/
 	@Override
 	public void onClick(View v) {
-		if (Arrays.asList(selectBtns).contains(v)) {//押されたボタンがselectBtnsに含まれていたら
-			//押されたボタンがxmlで定義しているtagを取得してint型に変換
-			int input = Integer.parseInt(v.getTag().toString());
+		//ここではif文を使うが授業で習ったswitch文で処理を分けてもOK
+		if (Arrays.asList(gridBtns).contains(v)) {//押されたボタンがgridBtnsに含まれていたら
+			int input = 0;
+			//①、②のどちらでも押したボタンの情報を取得
+			//①押されたボタンがxmlで定義しているtagを取得してint型に変換
+			input = Integer.parseInt(v.getTag().toString());
+
+			//②tagを使わずに押されたボタンの配列添字をinputに代入するやり方
+//			for (int i = 0; i < gridBtns.length; i++) {
+//				if (v.equals(gridBtns[i])) {
+//					input = i;
+//				}
+//			}
+
 			if (!board[input].equals("-")) {//ボタンの表示が"-"ではないなら
 				//結果表示欄に選択済み情報出す
 				resultText.setText("既に選択済みです");
@@ -90,32 +101,32 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 				if (winner != null) {//winnerにnull以外が返ってきたら
 					//決着済み
 					//ひとまず9ますのボタンを押せなくする
-					for (int i = 0; i < selectBtns.length; i++) {
-						selectBtns[i].setOnClickListener(null);
+					for (int i = 0; i < gridBtns.length; i++) {
+						gridBtns[i].setOnClickListener(null);
 					}
 					//結果表示欄に勝負結果を表示
 					resultText.setText("「Player： " + winner + " の勝ちです」");
-				} else if (turn < selectBtns.length - 1) {//ターン数を最大で引き分けになるまでは1足していく
+				} else if (turn < gridBtns.length - 1) {//ターン数を最大で引き分けになるまでは1足していく
 					turn++;
 					//その都度ターン表示欄を更新
 					turnText.setText("Player： " + player[turn % 2] + " のターン");
 				} else {//turnが一定値を超えると引き分け(ここでは9以上)
-					for (int i = 0; i < selectBtns.length; i++) {
-						selectBtns[i].setOnClickListener(null);
+					for (int i = 0; i < gridBtns.length; i++) {
+						gridBtns[i].setOnClickListener(null);
 					}
 					//結果表示欄を更新
 					resultText.setText("「引き分けです」");
 				}
 			}
-		} else {//押されたボタンがselectBtnsに含まれていない場合(ここでは再勝負ボタン)
-			//すべての情報を初期値に戻す
+		} else {//押されたボタンがgridBtnsに含まれていない場合(ここでは再勝負ボタン)
+			//すべての情報を初期値に戻して再勝負
 			turn = 0;
 			turnText.setText("Player： " + player[turn % 2] + " のターン");
 			resultText.setText("プレイ中");
-			for (int i = 0; i < selectBtns.length; i++) {
-				selectBtns[i].setOnClickListener(this);
-				selectBtns[i].setText("-");
-				selectBtns[i].setTextColor(Color.rgb(0, 0, 0));
+			for (int i = 0; i < gridBtns.length; i++) {
+				gridBtns[i].setOnClickListener(this);
+				gridBtns[i].setText("-");
+				gridBtns[i].setTextColor(Color.rgb(0, 0, 0));
 				board[i] = "-";
 			}
 		}
