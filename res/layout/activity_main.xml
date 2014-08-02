@@ -19,26 +19,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
         android:layout_centerHorizontal="true"
+        android:layout_margin="2dp"
+        android:background="#cccccc"
         android:tag="1"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
+        android:layout_margin="2dp"
         android:layout_toLeftOf="@+id/btn1"
+        android:background="#cccccc"
         android:tag="0"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/turnText"
+        android:layout_margin="2dp"
         android:layout_toRightOf="@+id/btn1"
+        android:background="#cccccc"
         android:tag="2"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn4"
@@ -46,26 +55,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn1"
         android:layout_centerHorizontal="true"
+        android:layout_margin="2dp"
+        android:background="#cccccc"
         android:tag="4"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn1"
+        android:layout_margin="2dp"
         android:layout_toLeftOf="@+id/btn4"
+        android:background="#cccccc"
         android:tag="3"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn1"
+        android:layout_margin="2dp"
         android:layout_toRightOf="@+id/btn4"
+        android:background="#cccccc"
         android:tag="5"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn7"
@@ -73,26 +91,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn4"
         android:layout_centerHorizontal="true"
+        android:layout_margin="2dp"
+        android:background="#cccccc"
         android:tag="7"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn4"
+        android:layout_margin="2dp"
         android:layout_toLeftOf="@+id/btn7"
+        android:background="#cccccc"
         android:tag="6"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn4"
+        android:layout_margin="2dp"
         android:layout_toRightOf="@+id/btn7"
+        android:background="#cccccc"
         android:tag="8"
-        android:text="-" />
+        android:text="-"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/resultText"
@@ -111,6 +138,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/resultText"
         android:layout_centerHorizontal="true"
-        android:text="再勝負！" />
+        android:text="再勝負" />
 
 </RelativeLayout>

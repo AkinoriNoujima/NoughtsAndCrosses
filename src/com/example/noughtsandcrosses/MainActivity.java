@@ -2,6 +2,7 @@ package com.example.noughtsandcrosses;
 
 import java.util.Arrays;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -62,6 +63,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 	}
 
 	/*-----------------------------------------------------------------------*/
+	@SuppressLint("NewApi")
 	//onClick  各ボタンが押された時の処理
 	/*-----------------------------------------------------------------------*/
 	@Override
@@ -106,6 +108,14 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 					}
 					//結果表示欄に勝負結果を表示
 					resultText.setText("「Player： " + winner + " の勝ちです」");
+
+					//いじくった戻り値で遊ぶなら
+//					resultText.setText("「Player： " + winner.substring(0, 1) + " の勝ちです」");
+					//揃ったラインの色を変えてみる
+//					for (int i = 0; i < winner.length() - 1; i++) {
+//						gridBtns[Integer.parseInt(winner.substring(i + 1, i + 2))].setBackgroundColor(Color.GREEN);
+//					}
+
 				} else if (turn < gridBtns.length - 1) {//ターン数を最大で引き分けになるまでは1足していく
 					turn++;
 					//その都度ターン表示欄を更新
@@ -128,6 +138,8 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 				gridBtns[i].setText("-");
 				gridBtns[i].setTextColor(Color.rgb(0, 0, 0));
 				board[i] = "-";
+				//いじくった戻り値で遊ぶなら
+//				gridBtns[i].setBackgroundColor(Color.rgb(204, 204, 204));
 			}
 		}
 	}
@@ -172,6 +184,9 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			String result = checkLine(board[ck[0]], board[ck[1]], board[ck[2]]);
 			if (result != null) {
 				return result;
+
+				//戻り値をいじくって遊ぶみる(揃ったラインの情報も持っていく)
+//				return result + ck[0] + ck[1] + ck[2];
 			}
 		}
 		return null;
