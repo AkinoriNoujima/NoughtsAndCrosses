@@ -102,7 +102,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 				String winner = checkBoard(board);
 				if (winner != null) {//winnerにnull以外が返ってきたら
 					//決着済み
-					//ひとまず9ますのボタンを押せなくする
+					//ひとまず9マスのボタンを押せなくする
 					for (int i = 0; i < gridBtns.length; i++) {
 						gridBtns[i].setOnClickListener(null);
 					}
@@ -185,7 +185,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			if (result != null) {
 				return result;
 
-				//戻り値をいじくって遊ぶみる(揃ったラインの情報も持っていく)
+				//戻り値をいじくって遊んでみる(揃ったラインの情報も持っていく)
 //				return result + ck[0] + ck[1] + ck[2];
 			}
 		}
