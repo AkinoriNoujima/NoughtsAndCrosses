@@ -107,14 +107,14 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 						gridBtns[i].setOnClickListener(null);
 					}
 					//結果表示欄に勝負結果を表示
-					resultText.setText("「Player： " + winner + " の勝ちです」");
+//					resultText.setText("「Player： " + winner + " の勝ちです」");
 
 					//いじくった戻り値で遊ぶなら
-//					resultText.setText("「Player： " + winner.substring(0, 1) + " の勝ちです」");
+					resultText.setText("「Player： " + winner.substring(0, 1) + " の勝ちです」");
 					//揃ったラインの色を変えてみる
-//					for (int i = 0; i < winner.length() - 1; i++) {
-//						gridBtns[Integer.parseInt(winner.substring(i + 1, i + 2))].setBackgroundColor(Color.GREEN);
-//					}
+					for (int i = 0; i < winner.length() - 1; i++) {
+						gridBtns[Integer.parseInt(winner.substring(i + 1, i + 2))].setBackgroundColor(Color.GREEN);
+					}
 
 				} else if (turn < gridBtns.length - 1) {//ターン数を最大で引き分けになるまでは1足していく
 					turn++;
@@ -139,7 +139,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 				gridBtns[i].setTextColor(Color.rgb(0, 0, 0));
 				board[i] = "-";
 				//いじくった戻り値で遊ぶなら
-//				gridBtns[i].setBackgroundColor(Color.rgb(204, 204, 204));
+				gridBtns[i].setBackgroundColor(Color.rgb(204, 204, 204));
 			}
 		}
 	}
@@ -183,10 +183,10 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 			int[] ck = checkLines[i];
 			String result = checkLine(board[ck[0]], board[ck[1]], board[ck[2]]);
 			if (result != null) {
-				return result;
+//				return result;
 
 				//戻り値をいじくって遊んでみる(揃ったラインの情報も持っていく)
-//				return result + ck[0] + ck[1] + ck[2];
+				return result + ck[0] + ck[1] + ck[2];
 			}
 		}
 		return null;
